@@ -2,7 +2,7 @@
 
 public class Dynamic_Array_Upgrade
 {
-    private object[] array;
+    public object[] array;
     private const int GROWTH_FATOR = 2; //배열 크기 성장인자
 
     public int Count { get; private set; }
@@ -26,7 +26,7 @@ public class Dynamic_Array_Upgrade
         {
             int newSize = Capacity * GROWTH_FATOR;
             var temp = new object[newSize];
-            for(int i=0; i<array.Length; i++) //array -> temp copy
+            for (int i = 0; i < array.Length; i++) //array -> temp copy
             {
                 temp[i] = array[i];
             }
@@ -38,7 +38,7 @@ public class Dynamic_Array_Upgrade
 
     public object Get(int index)
     {
-        if(index > Capacity - 1) //capaciry-1(array의 마지막 인덱스)
+        if (index > Capacity - 1) //capaciry-1(array의 마지막 인덱스)
         {
             throw new ApplicationException("Out of Bound");
         }
